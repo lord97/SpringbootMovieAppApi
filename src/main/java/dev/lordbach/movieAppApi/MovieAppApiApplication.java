@@ -14,13 +14,6 @@ public class MovieAppApiApplication {
 		SpringApplication.run(MovieAppApiApplication.class, args);
 	}
 
-    @Value("${MONGO_DATABASE}")
-    private String mongoDatabaseName;
 
-    @GetMapping("/")
-    public String hello(){
-        // Retourne la valeur de la variable d'environnement injectée
-        return "Nom de la base de données MongoDB : " + mongoDatabaseName;
-    }
 
 }
