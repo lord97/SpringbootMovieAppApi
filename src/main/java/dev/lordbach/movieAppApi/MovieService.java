@@ -11,11 +11,16 @@ import java.util.Optional;
 public class MovieService {
     @Autowired // let the framwork know to initiate the class for us
     private MovieRepository movieRepository;
+
     public List<Movie> allmovies(){
         return movieRepository.findAll();
     }
 
     public Optional<Movie> singleMovie(ObjectId id){
         return movieRepository.findById(id);
+    }
+
+    public Optional<Movie> singleMovieByImdb(String imdbId){
+        return movieRepository.findMovieByImdbId(imdbId);
     }
 }
